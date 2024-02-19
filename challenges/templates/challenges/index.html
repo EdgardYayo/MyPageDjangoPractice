@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title%}
+    All months
+{% endblock %}
+
+{% block content %}
+        <ul class="list">
+            {% for month in months %}
+              <li class="list-item">
+                {% comment %} Also works --> <a href="{{ month }}">{{ month|title }}</a> {% endcomment %}
+                <a href="{% url "month-challenge" month %}">{{ month|title }}</a>
+              </li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+    

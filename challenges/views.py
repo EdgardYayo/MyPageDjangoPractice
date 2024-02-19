@@ -17,26 +17,34 @@ monthly_abrev = {
     "october": "This is halloween, halloween, halloween",
     "november": "The winter is coming",
     "december": "Merry Christmas"
+    # "december": None
 }
 
 # Create your views here.
 
 def index(request):
 
-    list_items = ""
+    # list_items = ""
     months = list(monthly_abrev.keys())
 
-    for month in months:
-        capitalized_month = month.capitalize()
-        month_path = reverse("month-challenge", args=[month])
-        list_items += f"<li><a href='{month_path}'>{capitalized_month}</a></li>"
+    return render(
+        request, # request
+        "challenges/index.html", #path to the template/html
+        { # context
+        "months": months  
+    })
 
-    response_data = f"""
-        <ul>
-            {list_items}
-        </ul>
-    """
-    return HttpResponse(response_data)
+    # for month in months:
+    #     capitalized_month = month.capitalize()
+    #     month_path = reverse("month-challenge", args=[month])
+    #     list_items += f"<li><a href='{month_path}'>{capitalized_month}</a></li>"
+
+    # response_data = f"""
+    #     <ul>
+    #         {list_items}
+    #     </ul>
+    # """
+    # return HttpResponse(response_data)
 
 def monthly_by_number(request, month_number):
     # challenge_text = None

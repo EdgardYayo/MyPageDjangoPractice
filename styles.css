@@ -1,0 +1,15 @@
+.list {
+    padding: 10px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-content: center;
+    list-style: none;
+}
+
+.list-item,
+.list-item > a 
+    {
+    color: red;
+    text-decoration: none;
+}
