@@ -1,52 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block page_title %}Month Phrases{% endblock  %}</title>
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="{% static "styles.css" %}">
+        {% block css_files %}{% endblock  %}
     </head>
-    <style>
-        .list {
-            margin: 20px;
-    padding: 10px;
-    border: 3px dotted black;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    place-items: center;
-    list-style: none;
-    box-shadow: -10px -10px 3px 3px purple;
-    transition: all 0.2s ease-in-out;
-}
-
-.list:hover {
-    box-shadow: 10px 10px 3px 3px purple;
-}
-.list-item,
-.list-item > a 
-    {
-    text-decoration: none;
-    font-size: x-large;
-    font-family: monospace;
-    padding: 5px;
-    filter: blur(0.4px);
-    transition: all 0.2s ease-in-out;
-}
-
-    .list-item:hover,
-    .list-item > a:hover {
-        color: purple;
-        font-weight: bold;
-        border-bottom: 1px solid gray;
-        transform: translateY(-2px);
-        filter: blur(0);
-        position: relative;
-}
-
-    </style>
-
     <body>
        {% block content %}
         

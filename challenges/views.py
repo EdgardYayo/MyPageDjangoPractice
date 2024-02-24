@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -92,8 +92,8 @@ def monthly_challenge(request, month):
         # response_data = render_to_string("challenges/challenge.html")
         # return HttpResponse(response_data)
     except:
-        return HttpResponseNotFound("""<div style="display: flex; align-item:center; justify-content:center; border: 1px solid black; border-radius: 10px;  padding: 10px;">
-                                            <h1>This month doesn't exist<h1>
-                                            <span>💐</span>
-                                        </div>
-                                    """)
+        # response = render_to_string("404.html")
+        # return HttpResponseNotFound(response)
+        raise Http404()
+    
+
