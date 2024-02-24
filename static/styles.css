@@ -1,23 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+:root {
+    --color-brown: rgb(165, 106, 30);
+}
 
 html, body {
     font-family: "Playfair Display", sans-serif;
     margin: 0;
+    background-color: #1a1a1a;
 }
 
 .list {
-    padding: 10px;
-    border: 1px solid black;
+    padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     place-content: center;
     list-style: none;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 25rem;
+    box-shadow: 0 2px 8px rgba(165, 106, 30, 0.7);
+    border-radius: 12px;
+    background-color: #ccc;
 }
 
 .list-item,
 .list-item > a 
     {
-    color: red;
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
     text-decoration: none;
+    color: #222;
+}
+
+.list-item > a:hover,
+.list-item > a:active {
+    color: rgb(165, 106, 30);
+}
+
+header {
+    width: 100%;
+    height: 5rem;
+    background-color: #444;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-link {
+    margin-inline: 1rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: var(--color-brown);
+    text-shadow: 0 0 1px white;
+}
+
+.mth-title {
+    color: var(--color-brown);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mth-text {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: 400;
+}
+
+.alt-text {
+    font-size: 2rem;
+    color: wheat;
+    text-align: center;
 }

@@ -4,10 +4,10 @@
 
     {% block content %}
         {% include "challenges/includes/header.html" %}
-        <h1>{{ month|title }}</h1>
+        <h1 class="mth-title">{{ month|title }}</h1>
         {% if text is not None %}
             <h2 class="mth-text">{{ text }}</h2>
         {% else %}    
-            <p>There is no challenge for this month!</p>
+            <p class="alt-text">There is no challenge for this month!</p>
         {% endif %}
     {% endblock %}
